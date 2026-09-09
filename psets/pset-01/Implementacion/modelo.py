@@ -1,7 +1,7 @@
 
 from datetime import datetime, time
 
-# Regla de Prioridad (Comportamiento extraído a su propia clase sin usar abc)
+
 class ReglaPrioridad:
     def tiene_prioridad(self, hora_reserva: time) -> bool:
         raise NotImplementedError("Las subclases deben implementar este método")
@@ -62,7 +62,6 @@ class Conflicto:
         self.fecha_hora = fecha_hora
         self.estado = "pendiente"
 
-# Gestor del Sistema para los flujos
 class SistemaReservaU:
     def __init__(self):
         self.canchas = []
