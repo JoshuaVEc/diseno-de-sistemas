@@ -1,3 +1,8 @@
+import copy
+
+
+
+
 class Computadora:
     def __init__(self):
         self.cpu=None
@@ -13,6 +18,8 @@ class Computadora:
         print('GPU: ' , self.gpu)
         print('DISCO: ', self.disco)
         print('Wifi:', self.wifi)
+    def clonar(self)-> 'Computadora':
+        return copy.deepcopy(self)
 
 
 class ComputadoraBuilder:
@@ -44,6 +51,13 @@ def main():
     pc_gaming = pc_builder.addDisco(1).addCPU(20).addWifi('5G').build()
 
     pc_gaming.mostrar()
+
+    pc_work = pc_gaming.clonar()
+
+    pc_work.ram=64
+
+    pc_work.mostrar()
+
 
 main()
 
